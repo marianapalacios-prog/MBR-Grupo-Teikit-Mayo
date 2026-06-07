@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScoreCard Mayo 2026 — Grupo Teikit / Lucky / Itzu / El Huequito</title>
+<style>
+:root{
+  --rappi:#ff441f;
+  --rappi-2:#ff6b3d;
+  --rappi-pink:#ff3d55;
+  --ink:#171321;
+  --muted:#6f7280;
+  --line:#ececf2;
+  --paper:#ffffff;
+  --soft:#f7f7fb;
+  --shadow:0 18px 45px rgba(23,19,33,.08);
+  --shadow-sm:0 8px 22px rgba(23,19,33,.07);
+  --green:#12B76A;
+  --red:#D92D20;
+  --yellow:#F79009;
+  --blue:#1570EF;
+  --purple:#7A5AF8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at top left,#fff0ea 0,#f7f7fb 340px,#f7f7fb 100%);font-size:12px;color:var(--ink);line-height:1.35;padding-bottom:18px}
+body:before{content:"";position:fixed;inset:0;background:linear-gradient(135deg,rgba(255,68,31,.06),transparent 35%),radial-gradient(circle at 85% 10%,rgba(122,90,248,.08),transparent 25%);pointer-events:none;z-index:-1}
+.header{margin:16px 16px 0;border-radius:24px;background:linear-gradient(135deg,#1d1628 0%,#401e28 42%,#ff441f 100%);color:#fff;padding:26px 30px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.header:before{content:"";position:absolute;right:-80px;top:-120px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.14)}
+.header:after{content:"";position:absolute;left:32px;bottom:-90px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.07)}
+.header h1{font-size:clamp(24px,3.1vw,42px);font-weight:950;letter-spacing:-1.2px;position:relative;z-index:1}
+.header p{font-size:13px;opacity:.9;margin-top:8px;position:relative;z-index:1;max-width:720px}
+.header-right{font-size:12px;text-align:right;opacity:.94;position:relative;z-index:1;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:12px 14px;border-radius:16px;backdrop-filter:blur(10px);min-width:230px}
+.header-right div:first-child{font-weight:850;margin-bottom:4px}.header-right div:last-child{opacity:.82}
+.executive-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:16px 16px 6px}.exec-card{background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.8);border-radius:18px;padding:16px 16px;box-shadow:var(--shadow-sm);backdrop-filter:blur(14px);position:relative;overflow:hidden}.exec-card:before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--rappi),var(--rappi-pink))}.exec-label{font-size:10px;font-weight:850;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}.exec-value{font-size:24px;font-weight:950;margin-top:6px;letter-spacing:-.7px}.exec-note{font-size:11px;color:var(--muted);margin-top:3px}.exec-card.good .exec-value{color:var(--green)}.exec-card.warn .exec-value{color:var(--yellow)}.exec-card.danger .exec-value{color:var(--red)}.exec-card.blue .exec-value{color:var(--blue)}
+.scorecard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:16px}.brand-block{background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.9);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease}.brand-block:hover{transform:translateY(-2px);box-shadow:var(--shadow)}.brand-header{padding:16px 18px 14px;font-size:16px;font-weight:950;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative}.brand-header:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px}.brand-header .mes{font-size:11px;font-weight:750;opacity:.72;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);padding:4px 9px;border-radius:999px}.lucky .brand-header{background:linear-gradient(135deg,#fff8ec,#fff0d4);color:#7a4f00}.lucky .brand-header:before{background:var(--yellow)}.teikit .brand-header{background:linear-gradient(135deg,#eff8ff,#e1f0ff);color:#0d3d8a}.teikit .brand-header:before{background:var(--blue)}.itzu .brand-header{background:linear-gradient(135deg,#f9f5ff,#eee8ff);color:#3b1fa3}.itzu .brand-header:before{background:var(--purple)}.huequito .brand-header{background:linear-gradient(135deg,#ecfdf3,#dcf8e9);color:#054f30}.huequito .brand-header:before{background:var(--green)}
+.weeks-section{padding:10px 12px 4px;overflow-x:auto}.week-header-row,.kpi-row{display:grid;min-width:640px}.week-header-row.week-cols,.kpi-row.week-cols{grid-template-columns:132px repeat(6,1fr)}.week-header-row{background:#fbfbfd;border:1px solid var(--line);border-radius:14px 14px 0 0;font-size:10px;font-weight:850;color:#777b88;text-transform:uppercase;letter-spacing:.3px}.week-header-cell{padding:8px 8px;text-align:right}.week-header-cell:first-child{text-align:left}.kpi-row{border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);align-items:stretch;background:#fff}.kpi-row:last-child{border-radius:0 0 14px 14px}.kpi-row:hover{background:#fffaf7}.kpi-label{padding:9px 10px;font-weight:800;font-size:11px;color:#424653;background:#fafafa;border-right:1px solid var(--line);display:flex;align-items:center}.kpi-val{padding:9px 8px;text-align:right;font-size:11px;font-variant-numeric:tabular-nums;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:2px}.kpi-val.total{font-weight:950;background:#f4f4f8;color:#171321}.kpi-val.mom{font-size:11px}.up{color:var(--green);font-weight:900}.down{color:var(--red);font-weight:900}.flat{color:#727682;font-weight:800}.na{color:#b9bbc5}.wow-mini{font-size:9.5px;color:#9a9da8;display:block;font-weight:850}.section-title{margin-top:10px;padding:8px 14px;font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.65px;background:#f6f6fa;color:#5c6070;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.monthly-row{display:grid;grid-template-columns:132px repeat(3,1fr);border-bottom:1px solid var(--line);align-items:stretch}.monthly-row:hover{background:#fffaf7}.monthly-row .kpi-val{padding:8px 10px}.notes-box{padding:12px 14px;background:#fffaf0;border:1px solid #ffe6af;border-left:5px solid var(--yellow);margin:12px;border-radius:16px;font-size:11px;line-height:1.55;color:#4d5060}.notes-box strong{display:block;color:#252735;margin-bottom:5px;font-size:11.5px;font-weight:950}.store-table,.summary-table,.promo-table{width:100%;border-collapse:separate;border-spacing:0;font-size:11px}.store-table th,.summary-table th,.promo-table th{background:#f6f6fa;padding:8px 10px;text-align:left;font-weight:900;font-size:9.8px;color:#686c78;text-transform:uppercase;letter-spacing:.35px;border-bottom:1px solid var(--line)}.store-table td,.summary-table td,.promo-table td{padding:8px 10px;border-bottom:1px solid #f0f0f4;background:#fff}.store-table tr:hover td,.summary-table tr:hover td,.promo-table tr:hover td{background:#fffaf7}.rank-1{color:var(--green);font-weight:950}.rank-2{color:var(--blue);font-weight:900}.rank-3{color:#777b88;font-weight:800}.badge{display:inline-flex;align-items:center;white-space:nowrap;padding:3px 9px;border-radius:999px;font-size:9.5px;font-weight:900}.badge-g{background:#ECFDF3;color:#027A48}.badge-r{background:#FEF3F2;color:#B42318}.badge-y{background:#FFFAEB;color:#B54708}.badge-b{background:#EFF8FF;color:#175CD3}.badge-p{background:#F4F3FF;color:#5925DC}.promos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:0 16px 16px}.promo-card{background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.9);border-radius:22px;box-shadow:var(--shadow-sm);overflow:hidden}.promo-card-title{padding:14px 16px;font-weight:950;font-size:13px;background:linear-gradient(135deg,#fff,#f8f8fc);border-bottom:1px solid var(--line)}.promo-card table{display:table}.group-summary{background:rgba(255,255,255,.94);border-radius:22px;box-shadow:var(--shadow);margin:0 16px 16px;overflow:hidden;border:1px solid rgba(255,255,255,.9)}.group-summary-header{background:linear-gradient(135deg,#1d1628,#ff441f);color:white;padding:16px 18px;font-weight:950;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:12px}.summary-table th,.summary-table td{text-align:right}.summary-table th:first-child,.summary-table td:first-child{text-align:left;font-weight:900}.summary-table tr:last-child td{background:#f5f5f8;font-weight:950}.store-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 16px 16px}.table-wrap{padding:10px;overflow-x:auto}.brand-block .table-wrap table{min-width:620px}.toolbar{display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:10px 16px 0}.print-btn{border:0;background:#171321;color:white;border-radius:999px;padding:9px 14px;font-size:12px;font-weight:900;cursor:pointer;box-shadow:var(--shadow-sm)}.print-btn:hover{background:#ff441f}
+@media(max-width:1180px){.executive-strip{grid-template-columns:repeat(3,1fr)}.scorecard-grid,.store-grid,.promos-grid{grid-template-columns:1fr}.header{align-items:flex-start;flex-direction:column}.header-right{text-align:left}}
+@media(max-width:720px){body{font-size:11px}.header{margin:10px;padding:20px;border-radius:20px}.executive-strip{grid-template-columns:1fr;padding:10px}.scorecard-grid,.store-grid,.promos-grid{padding:10px;gap:12px}.group-summary{margin:0 10px 12px}.brand-header{font-size:14px;align-items:flex-start;gap:8px;flex-direction:column}.group-summary-header{flex-direction:column;align-items:flex-start}.toolbar{justify-content:flex-start;padding:10px}}
+@media print{body{background:white}.toolbar{display:none}.header,.brand-block,.promo-card,.group-summary{box-shadow:none;break-inside:avoid}.scorecard-grid{grid-template-columns:1fr 1fr}.brand-block{border:1px solid #ddd}.header{margin:0 0 10px;border-radius:0}.executive-strip{padding:8px 0;grid-template-columns:repeat(5,1fr)}.scorecard-grid,.store-grid,.promos-grid{padding:8px 0}.group-summary{margin:0}.kpi-row,.week-header-row{min-width:0}.week-header-row.week-cols,.kpi-row.week-cols{grid-template-columns:120px repeat(6,1fr)}}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>🍣 ScoreCard — Mayo 2026</h1>
+    <p>Grupo Teikit · Lucky Sushi · Sushi Shop Teikit · Itzu Sushi · El Huequito | Vista ejecutiva semanal para toma de decisiones comerciales</p>
+  </div>
+  <div class="header-right">
+    <div>🗓 Período: 1 - 31 Mayo 2026</div>
+    <div>Rappi MX · ScoreCard comercial</div>
+  </div>
+</div>
+
+<div class="toolbar">
+  <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+</div>
+
+<section class="executive-strip" aria-label="Resumen ejecutivo del grupo">
+  <div class="exec-card blue">
+    <div class="exec-label">Ventas mayo</div>
+    <div class="exec-value">$4.59M</div>
+    <div class="exec-note">Grupo total · -3.2% MoM</div>
+  </div>
+  <div class="exec-card danger">
+    <div class="exec-label">Órdenes</div>
+    <div class="exec-value">16,527</div>
+    <div class="exec-note">-8.1% MoM · caída de volumen</div>
+  </div>
+  <div class="exec-card warn">
+    <div class="exec-label">Markdown</div>
+    <div class="exec-value">21.7%</div>
+    <div class="exec-note">Lucky y Teikit concentran presión</div>
+  </div>
+  <div class="exec-card good">
+    <div class="exec-label">ROAS estrella</div>
+    <div class="exec-value">~47x</div>
+    <div class="exec-note">El Huequito, demanda orgánica sana</div>
+  </div>
+  <div class="exec-card danger">
+    <div class="exec-label">Alerta crítica</div>
+    <div class="exec-value">6</div>
+    <div class="exec-note">Órdenes Itzu en mayo</div>
+  </div>
+</section>
+
+<!-- ======== MAIN SCORECARD GRID ======== -->
+<div class="scorecard-grid">
+
+  <!-- ======================== LUCKY SUSHI ======================== -->
+  <div class="brand-block lucky">
+    <div class="brand-header">
+      <span>🍱 Lucky Sushi</span>
+      <span class="mes">Mayo 2026</span>
+    </div>
+
+    <!-- Week headers -->
+    <div class="weeks-section">
+      <div class="week-header-row week-cols">
+        <div class="week-header-cell">KPI</div>
+        <div class="week-header-cell">W1 1-7</div>
+        <div class="week-header-cell">W2 8-14</div>
+        <div class="week-header-cell">W3 15-21</div>
+        <div class="week-header-cell">W4 22-28</div>
+        <div class="week-header-cell">W5 29-31</div>
+        <div class="week-header-cell">TOTAL</div>
+      </div>
+
+      <!-- Ventas Brutas -->
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Ventas Brutas</div>
+        <div class="kpi-val">$424.6K</div>
+        <div class="kpi-val">$683.3K</div>
+        <div class="kpi-val">$747.4K</div>
+        <div class="kpi-val">$782.3K</div>
+        <div class="kpi-val">$373.5K</div>
+        <div class="kpi-val total">$3,011K</div>
+      </div>
+
+      <!-- Órdenes -->
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Órdenes</div>
+        <div class="kpi-val">1,451</div>
+        <div class="kpi-val">2,647<span class="wow-mini up">+82.4%</span></div>
+        <div class="kpi-val">3,056<span class="wow-mini up">+15.5%</span></div>
+        <div class="kpi-val">3,802<span class="wow-mini up">+24.4%</span></div>
+        <div class="kpi-val">1,330<span class="wow-mini down">-65.0%</span></div>
+        <div class="kpi-val total">12,286</div>
+      </div>
+
+      <!-- Ticket Promedio -->
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Ticket Prom.</div>
+        <div class="kpi-val">$293</div>
+        <div class="kpi-val">$258<span class="wow-mini down">-12.3%</span></div>
+        <div class="kpi-val">$245<span class="wow-mini down">-5.1%</span></div>
+        <div class="kpi-val">$206<span class="wow-mini down">-15.9%</span></div>
+        <div class="kpi-val">$281<span class="wow-mini up">+36.4%</span></div>
+        <div class="kpi-val total">$245</div>
+      </div>
+
+      <!-- % Descuento -->
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">% Dto / Venta</div>
+        <div class="kpi-val">6.5%</div>
+        <div class="kpi-val">30.5%</div>
+        <div class="kpi-val">31.2%</div>
+        <div class="kpi-val">32.5%</div>
+        <div class="kpi-val">29.9%</div>
+        <div class="kpi-val total">27.7%</div>
+      </div>
+
+      <!-- ADS -->
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">ADS Burn</div>
+        <div class="kpi-val">$6.8K</div>
+        <div class="kpi-val">$13.9K</div>
+        <div class="kpi-val">$57.0K</div>
+        <div class="kpi-val">$145.0K</div>
+        <div class="kpi-val">$48.6K</div>
+        <div class="kpi-val total">$271.3K</div>
+      </div>
+    </div>
+
+    <!-- Monthly comparison -->
+    <div class="section-title">Comparativa mensual</div>
+    <div class="monthly-row">
+      <div class="kpi-label">KPI</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">LY 2025*</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">YTD 2026</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">MoM</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">SALES</div>
+      <div class="kpi-val">$2,727K</div>
+      <div class="kpi-val">$13,848K</div>
+      <div class="kpi-val mom down">-3.8%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">ORDERS</div>
+      <div class="kpi-val">10,769</div>
+      <div class="kpi-val">60,880</div>
+      <div class="kpi-val mom down">-11.6%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">Ticket Prom</div>
+      <div class="kpi-val">$253</div>
+      <div class="kpi-val">$228 avg</div>
+      <div class="kpi-val mom up">+8.9%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">% Dto/Venta</div>
+      <div class="kpi-val">27.1%</div>
+      <div class="kpi-val">~27.7%</div>
+      <div class="kpi-val mom flat">-0.8pp</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">ADS</div>
+      <div class="kpi-val">$114.7K</div>
+      <div class="kpi-val">$473.6K</div>
+      <div class="kpi-val mom down">+161%</div>
+    </div>
+
+    <!-- Notes -->
+    <div class="notes-box">
+      <strong>📌 Contexto categoría Sushi</strong>
+      Oct #5 · Nov #4 · Dic #3 · Ene #3 · Feb #3 · Mar #5<br>
+      <span style="color:#D92D20;font-weight:700;">⚠️ Tickets W3-W4 caen por promos masivas 2x1 Lu-Vi + Sáb/Dom.</span><br>
+      Propuesta pendiente: usuarios nuevos + deals virales semanal.
+    </div>
+  </div>
+
+  <!-- ======================== TEIKIT ======================== -->
+  <div class="brand-block teikit">
+    <div class="brand-header">
+      <span>🍣 Sushi Shop Teikit</span>
+      <span class="mes">13:00 - 22:00 · Mayo 2026</span>
+    </div>
+
+    <div class="weeks-section">
+      <div class="week-header-row week-cols">
+        <div class="week-header-cell">KPI</div>
+        <div class="week-header-cell">W1 1-7</div>
+        <div class="week-header-cell">W2 8-14</div>
+        <div class="week-header-cell">W3 15-21</div>
+        <div class="week-header-cell">W4 22-28</div>
+        <div class="week-header-cell">W5 29-31</div>
+        <div class="week-header-cell">TOTAL</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Ventas Brutas</div>
+        <div class="kpi-val">$181.6K</div>
+        <div class="kpi-val">$210.7K</div>
+        <div class="kpi-val">$233.2K</div>
+        <div class="kpi-val">$301.9K</div>
+        <div class="kpi-val">$152.5K</div>
+        <div class="kpi-val total">$1,079.9K</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Órdenes</div>
+        <div class="kpi-val">456</div>
+        <div class="kpi-val">556<span class="wow-mini up">+21.9%</span></div>
+        <div class="kpi-val">677<span class="wow-mini up">+21.8%</span></div>
+        <div class="kpi-val">1,118<span class="wow-mini up">+65.1%</span></div>
+        <div class="kpi-val">314<span class="wow-mini down">-71.9%</span></div>
+        <div class="kpi-val total">3,121</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Ticket Prom.</div>
+        <div class="kpi-val">$398</div>
+        <div class="kpi-val">$379<span class="wow-mini down">-4.8%</span></div>
+        <div class="kpi-val">$345<span class="wow-mini down">-9.0%</span></div>
+        <div class="kpi-val">$270<span class="wow-mini down">-21.7%</span></div>
+        <div class="kpi-val">$486<span class="wow-mini up">+80.0%</span></div>
+        <div class="kpi-val total">$346</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">% Dto / Venta</div>
+        <div class="kpi-val">18.7%</div>
+        <div class="kpi-val">22.8%</div>
+        <div class="kpi-val">29.0%</div>
+        <div class="kpi-val">38.0%</div>
+        <div class="kpi-val">37.6%</div>
+        <div class="kpi-val total">29.8%</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">ADS Burn</div>
+        <div class="kpi-val">$7.8K</div>
+        <div class="kpi-val">$19.1K</div>
+        <div class="kpi-val">$37.8K</div>
+        <div class="kpi-val">$33.0K</div>
+        <div class="kpi-val">$13.0K</div>
+        <div class="kpi-val total">$110.7K</div>
+      </div>
+    </div>
+
+    <div class="section-title">Comparativa mensual</div>
+    <div class="monthly-row">
+      <div class="kpi-label">KPI</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">LY 2025*</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">YTD 2026</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">MoM</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">SALES</div>
+      <div class="kpi-val">$1,514K</div>
+      <div class="kpi-val">$5,030K</div>
+      <div class="kpi-val mom up">+3.3%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">ORDERS</div>
+      <div class="kpi-val">3,784</div>
+      <div class="kpi-val">13,018</div>
+      <div class="kpi-val mom up">+23.6%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">Ticket Prom</div>
+      <div class="kpi-val">$400</div>
+      <div class="kpi-val">$386 avg</div>
+      <div class="kpi-val mom down">-16.4%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">% Dto/Venta</div>
+      <div class="kpi-val">25.7%</div>
+      <div class="kpi-val">~24.5%</div>
+      <div class="kpi-val mom down">+4.1pp</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">ADS</div>
+      <div class="kpi-val">$94.8K</div>
+      <div class="kpi-val">$423.4K</div>
+      <div class="kpi-val mom up">+65.8%</div>
+    </div>
+
+    <div class="notes-box" style="border-color:#1570EF;background:#f0f7ff;">
+      <strong>📌 Contexto categoría Sushi · Teikit</strong>
+      Oct #9 · Nov #12 · Dic #7 · Ene #8 · Feb #8 · Mar #9<br>
+      <span style="color:#D92D20;font-weight:700;">🚨 Cierra Teikit Polanco — jalar usuarios de Prado y Parque Polanco.</span><br>
+      Revisar propuesta Dragon Maki 2x1 Sáb-Dom.<br>
+      Mov $399 regalo $40 (Ene-Feb) · L/M/J/S.
+    </div>
+  </div>
+
+  <!-- ======================== ITZU ======================== -->
+  <div class="brand-block itzu">
+    <div class="brand-header">
+      <span>🔮 Itzu Sushi</span>
+      <span class="mes">Mayo 2026</span>
+    </div>
+
+    <div class="weeks-section">
+      <div class="week-header-row week-cols">
+        <div class="week-header-cell">KPI</div>
+        <div class="week-header-cell">W1 1-7</div>
+        <div class="week-header-cell">W2 8-14</div>
+        <div class="week-header-cell">W3 15-21</div>
+        <div class="week-header-cell">W4 22-28</div>
+        <div class="week-header-cell">W5 29-31</div>
+        <div class="week-header-cell">TOTAL</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Ventas Brutas</div>
+        <div class="kpi-val">$1.2K</div>
+        <div class="kpi-val">$0</div>
+        <div class="kpi-val">$3.5K</div>
+        <div class="kpi-val">$0</div>
+        <div class="kpi-val">$0.4K</div>
+        <div class="kpi-val total">$4.99K</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Órdenes</div>
+        <div class="kpi-val">2</div>
+        <div class="kpi-val down">0</div>
+        <div class="kpi-val">3</div>
+        <div class="kpi-val down">0</div>
+        <div class="kpi-val">1</div>
+        <div class="kpi-val total">6</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Ticket Prom.</div>
+        <div class="kpi-val">$579</div>
+        <div class="kpi-val na">—</div>
+        <div class="kpi-val">$1,158</div>
+        <div class="kpi-val na">—</div>
+        <div class="kpi-val">$359</div>
+        <div class="kpi-val total">$832</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">% Dto / Venta</div>
+        <div class="kpi-val">0%</div>
+        <div class="kpi-val na">—</div>
+        <div class="kpi-val">0%</div>
+        <div class="kpi-val na">—</div>
+        <div class="kpi-val">0%</div>
+        <div class="kpi-val total">0%</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">ADS Burn</div>
+        <div class="kpi-val">$0</div>
+        <div class="kpi-val">$0</div>
+        <div class="kpi-val">$0</div>
+        <div class="kpi-val">$0</div>
+        <div class="kpi-val">$0</div>
+        <div class="kpi-val total">$0</div>
+      </div>
+    </div>
+
+    <div class="section-title">Comparativa mensual</div>
+    <div class="monthly-row">
+      <div class="kpi-label">KPI</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">LY 2025*</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">YTD 2026</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">MoM</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">SALES</div>
+      <div class="kpi-val">$16.0K</div>
+      <div class="kpi-val">$23.1K</div>
+      <div class="kpi-val mom down">-22.9%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">ORDERS</div>
+      <div class="kpi-val">26</div>
+      <div class="kpi-val">37</div>
+      <div class="kpi-val mom down">-25.0%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">Ticket Prom</div>
+      <div class="kpi-val">$617</div>
+      <div class="kpi-val">$625 avg</div>
+      <div class="kpi-val mom up">+2.9%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">% Dto/Venta</div>
+      <div class="kpi-val">44.5%</div>
+      <div class="kpi-val">~4.7%</div>
+      <div class="kpi-val mom up">-39.8pp</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">ADS</div>
+      <div class="kpi-val">$4.2K</div>
+      <div class="kpi-val">$0</div>
+      <div class="kpi-val mom down">-100%</div>
+    </div>
+
+    <div class="notes-box" style="border-color:#7A5AF8;background:#f9f5ff;">
+      <strong>📌 Contexto categoría Sushi · Itzu</strong>
+      Oct #70 · Nov #84 · Dic #86 · Ene #86 · Feb #80 · Mar #80<br>
+      <span style="color:#D92D20;font-weight:700;">🚨 CRÍTICO: 6 órdenes en mayo. Sin ADS activo. Ops por tienda requerido.</span><br>
+      Promo activa: 2x1 en Spicy Tuna, Tiger Roll, Salmón Avocado.<br>
+      Descuento $40 con mov $399 Sáb-Dom (co-inversión pendiente).
+    </div>
+  </div>
+
+  <!-- ======================== EL HUEQUITO ======================== -->
+  <div class="brand-block huequito">
+    <div class="brand-header">
+      <span>🥩 El Huequito</span>
+      <span class="mes">Mayo 2026</span>
+    </div>
+
+    <div class="weeks-section">
+      <div class="week-header-row week-cols">
+        <div class="week-header-cell">KPI</div>
+        <div class="week-header-cell">W1 1-7</div>
+        <div class="week-header-cell">W2 8-14</div>
+        <div class="week-header-cell">W3 15-21</div>
+        <div class="week-header-cell">W4 22-28</div>
+        <div class="week-header-cell">W5 29-31</div>
+        <div class="week-header-cell">TOTAL</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Ventas Brutas</div>
+        <div class="kpi-val">$119.3K</div>
+        <div class="kpi-val">$96.6K</div>
+        <div class="kpi-val">$118.5K</div>
+        <div class="kpi-val">$102.8K</div>
+        <div class="kpi-val">$56.8K</div>
+        <div class="kpi-val total">$493.9K</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Órdenes</div>
+        <div class="kpi-val">267</div>
+        <div class="kpi-val">214<span class="wow-mini down">-19.9%</span></div>
+        <div class="kpi-val">252<span class="wow-mini up">+17.8%</span></div>
+        <div class="kpi-val">240<span class="wow-mini down">-4.8%</span></div>
+        <div class="kpi-val">141<span class="wow-mini down">-41.2%</span></div>
+        <div class="kpi-val total">1,114</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">Ticket Prom.</div>
+        <div class="kpi-val">$447</div>
+        <div class="kpi-val">$451<span class="wow-mini up">+0.9%</span></div>
+        <div class="kpi-val">$470<span class="wow-mini up">+4.2%</span></div>
+        <div class="kpi-val">$428<span class="wow-mini down">-8.9%</span></div>
+        <div class="kpi-val">$403<span class="wow-mini down">-5.8%</span></div>
+        <div class="kpi-val total">$443</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">% Dto / Venta</div>
+        <div class="kpi-val">1.3%</div>
+        <div class="kpi-val">2.7%</div>
+        <div class="kpi-val">2.0%</div>
+        <div class="kpi-val">2.4%</div>
+        <div class="kpi-val">2.9%</div>
+        <div class="kpi-val total">2.1%</div>
+      </div>
+
+      <div class="kpi-row week-cols">
+        <div class="kpi-label">ADS Burn</div>
+        <div class="kpi-val">$139</div>
+        <div class="kpi-val">$85</div>
+        <div class="kpi-val">$119</div>
+        <div class="kpi-val">$219</div>
+        <div class="kpi-val">$273</div>
+        <div class="kpi-val total">$835</div>
+      </div>
+    </div>
+
+    <div class="section-title">Comparativa mensual</div>
+    <div class="monthly-row">
+      <div class="kpi-label">KPI</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">LY 2025*</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">YTD 2026</div>
+      <div class="kpi-val" style="font-weight:700;font-size:10px;color:#888;">MoM</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">SALES</div>
+      <div class="kpi-val">$397K</div>
+      <div class="kpi-val">$2,635K</div>
+      <div class="kpi-val mom down">-6.1%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">ORDERS</div>
+      <div class="kpi-val">846</div>
+      <div class="kpi-val">6,105</div>
+      <div class="kpi-val mom down">-7.6%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">Ticket Prom</div>
+      <div class="kpi-val">$470</div>
+      <div class="kpi-val">$432 avg</div>
+      <div class="kpi-val mom up">+1.5%</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">% Dto/Venta</div>
+      <div class="kpi-val">1.0%</div>
+      <div class="kpi-val">~2.1%</div>
+      <div class="kpi-val mom down">+1.1pp</div>
+    </div>
+    <div class="monthly-row">
+      <div class="kpi-label">ADS</div>
+      <div class="kpi-val">$28.6K</div>
+      <div class="kpi-val">$835</div>
+      <div class="kpi-val mom down">-97%</div>
+    </div>
+
+    <div class="notes-box" style="border-color:#12B76A;background:#f0fdf4;">
+      <strong>📌 Contexto categoría Tacos · El Huequito</strong>
+      Oct #9 · Nov #12 · Dic #11 · Ene #10<br>
+      Turbo: Oct #44 · Nov #3 · Dic #3 · Ene #3<br>
+      <span style="color:#12B76A;font-weight:700;">✅ ROAS top: ~47x. Ops todo por tienda pendiente revisión.</span><br>
+      Promos: Taco al Pastor 20-25% V/S/D · Combo Huequito 20-25% L/Mi/V/S.
+    </div>
+  </div>
+</div>
+
+<!-- ======== TIENDAS EL HUEQUITO ======== -->
+<div class="store-grid">
+  
+  <!-- El Huequito stores -->
+  <div class="brand-block huequito">
+    <div class="brand-header">
+      <span>🥩 El Huequito — Detalle por Tienda · Mayo 2026</span>
+    </div>
+    <div class="table-wrap">
+      <table class="store-table">
+        <thead><tr>
+          <th>#</th><th>Tienda</th><th>Órdenes</th><th>Ventas</th><th>AOV</th><th>%MD</th><th>Calif.</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="rank-1">1</td><td>Pennsylvania</td><td>192</td><td>$79,700</td><td>$415</td><td>1.5%</td><td><span class="badge badge-g">Top Oro</span></td></tr>
+          <tr><td class="rank-1">2</td><td>Tintoreto</td><td>181</td><td>$77,348</td><td>$427</td><td>2.0%</td><td><span class="badge badge-g">Top Oro</span></td></tr>
+          <tr><td class="rank-1">3</td><td>Juan Escutia</td><td>145</td><td>$62,996</td><td>$434</td><td>1.7%</td><td><span class="badge badge-g">Top Oro</span></td></tr>
+          <tr><td class="rank-2">4</td><td>Santa Fe</td><td>129</td><td>$57,833</td><td>$448</td><td>2.3%</td><td><span class="badge badge-b">Top Plata</span></td></tr>
+          <tr><td class="rank-2">5</td><td>Coyoacán</td><td>86</td><td>$42,997</td><td>$500</td><td>3.1%</td><td><span class="badge badge-g">Top Oro</span></td></tr>
+          <tr><td class="rank-2">6</td><td>Narvarte</td><td>81</td><td>$35,300</td><td>$436</td><td>2.0%</td><td><span class="badge badge-y">Básico</span></td></tr>
+          <tr><td class="rank-3">7</td><td>General Prim</td><td>76</td><td>$32,432</td><td>$427</td><td>2.2%</td><td><span class="badge badge-b">Top Plata</span></td></tr>
+          <tr><td class="rank-3">8</td><td>Universidad</td><td>56</td><td>$26,677</td><td>$476</td><td>2.9%</td><td><span class="badge badge-y">Básico</span></td></tr>
+          <tr><td class="rank-3">9</td><td>Acoxpa</td><td>61</td><td>$25,323</td><td>$415</td><td>1.7%</td><td><span class="badge badge-g">Top Oro</span></td></tr>
+          <tr><td class="rank-3">10</td><td>Oceanía</td><td>39</td><td>$21,499</td><td>$551</td><td>2.6%</td><td><span class="badge badge-g">Top Oro</span></td></tr>
+          <tr><td>11</td><td>Ayuntamiento</td><td>25</td><td>$12,902</td><td>$516</td><td>2.5%</td><td><span class="badge badge-y">Básico</span></td></tr>
+          <tr><td>12</td><td>Tepeyac</td><td>30</td><td>$12,563</td><td>$419</td><td>3.3%</td><td><span class="badge badge-g">Top Oro</span></td></tr>
+          <tr><td>13</td><td>Tec</td><td>13</td><td>$6,334</td><td>$487</td><td>2.5%</td><td><span class="badge badge-g">Top Oro</span></td></tr>
+          <tr><td>—</td><td style="color:#D92D20;">Arboledas</td><td>0</td><td>$0</td><td>—</td><td>—</td><td><span class="badge badge-r">⚠️ Inactiva</span></td></tr>
+          <tr><td>—</td><td style="color:#D92D20;">Santa Mónica</td><td>0</td><td>$0</td><td>—</td><td>—</td><td><span class="badge badge-r">⚠️ Inactiva</span></td></tr>
+          <tr><td>—</td><td style="color:#D92D20;">Churubusco</td><td>0</td><td>$0</td><td>—</td><td>—</td><td><span class="badge badge-r">⚠️ Inactiva</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Lucky top stores -->
+  <div class="brand-block lucky">
+    <div class="brand-header">
+      <span>🍱 Lucky Sushi — Top 15 Tiendas · Mayo 2026</span>
+    </div>
+    <div class="table-wrap">
+      <table class="store-table">
+        <thead><tr>
+          <th>#</th><th>Tienda</th><th>Órdenes</th><th>Ventas</th><th>AOV</th><th>NSE</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="rank-1">1</td><td>Las Antenas</td><td>509</td><td>$134,294</td><td>$264</td><td><span class="badge badge-y">Popular</span></td></tr>
+          <tr><td class="rank-1">2</td><td>- Neza</td><td>674</td><td>$131,232</td><td>$195</td><td><span class="badge badge-y">Popular</span></td></tr>
+          <tr><td class="rank-1">3</td><td>Ajusco</td><td>452</td><td>$125,746</td><td>$278</td><td><span class="badge badge-b">Medio</span></td></tr>
+          <tr><td class="rank-2">4</td><td>Portales</td><td>436</td><td>$113,392</td><td>$260</td><td><span class="badge badge-b">Medio</span></td></tr>
+          <tr><td class="rank-2">5</td><td>San Antonio</td><td>415</td><td>$111,171</td><td>$268</td><td><span class="badge badge-g">Medio-Alto</span></td></tr>
+          <tr><td class="rank-2">6</td><td>Satélite</td><td>350</td><td>$111,100</td><td>$317</td><td><span class="badge badge-g">Medio-Alto</span></td></tr>
+          <tr><td class="rank-2">7</td><td>Aragón</td><td>563</td><td>$110,969</td><td>$197</td><td><span class="badge badge-y">Popular</span></td></tr>
+          <tr><td class="rank-3">8</td><td>Plutarco</td><td>420</td><td>$110,001</td><td>$262</td><td><span class="badge badge-b">Medio</span></td></tr>
+          <tr><td class="rank-3">9</td><td>Lindavista</td><td>438</td><td>$96,248</td><td>$220</td><td><span class="badge badge-b">Medio</span></td></tr>
+          <tr><td class="rank-3">10</td><td>Iztapalapa</td><td>390</td><td>$96,170</td><td>$247</td><td><span class="badge badge-y">Popular</span></td></tr>
+          <tr><td>11</td><td>Santa Ursula</td><td>402</td><td>$96,131</td><td>$239</td><td><span class="badge badge-b">Medio</span></td></tr>
+          <tr><td>12</td><td>Xochimilco</td><td>377</td><td>$92,003</td><td>$244</td><td><span class="badge badge-y">Popular</span></td></tr>
+          <tr><td>13</td><td>Lago Garda</td><td>319</td><td>$85,134</td><td>$267</td><td><span class="badge badge-g">Medio-Alto</span></td></tr>
+          <tr><td>14</td><td>Taxqueña</td><td>270</td><td>$83,571</td><td>$310</td><td><span class="badge badge-b">Medio</span></td></tr>
+          <tr><td>15</td><td>Azcapotzalco</td><td>338</td><td>$81,813</td><td>$242</td><td><span class="badge badge-b">Medio</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======== PROMOS ACTIVAS ======== -->
+<div class="promos-grid">
+  <div class="promo-card">
+    <div class="promo-card-title">🎁 Promos Activas — Lucky Sushi &amp; Teikit (Mayo 2026)</div>
+    <table class="promo-table">
+      <thead><tr><th>Marca</th><th>Producto</th><th>Días</th><th>No PRO</th><th>PRO</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Lucky</td><td>Dragon/Tori/Tokio/Ebi Bento</td><td>L/Mi/S</td><td>25%</td><td>30%</td><td><span class="badge badge-g">OK</span></td></tr>
+        <tr><td>Lucky</td><td>Yakimeshi Verd/Tampico</td><td>S/D</td><td>45%</td><td>60%</td><td><span class="badge badge-g">OK</span></td></tr>
+        <tr><td>Lucky</td><td>Kushiage Plátano</td><td>S/D</td><td>2x1</td><td>2x1</td><td><span class="badge badge-g">OK</span></td></tr>
+        <tr><td>Lucky</td><td>Aloha/Dragon/Queso/SuperCali Roll</td><td>L-V</td><td>2x1</td><td>2x1</td><td><span class="badge badge-g">OK</span></td></tr>
+        <tr><td>Teikit</td><td>Yakimeshi Tampico / Kushiage Queso</td><td>V/S/D</td><td>2x1</td><td>2x1</td><td><span class="badge badge-g">OK</span></td></tr>
+        <tr><td>Teikit</td><td>Aguacate Maki</td><td>Todos</td><td>55%</td><td>60%</td><td><span class="badge badge-g">OK</span></td></tr>
+        <tr><td>Teikit</td><td>Filadelfia/Dragon/Red Dragon Maki</td><td>Todos</td><td>2x1</td><td>2x1</td><td><span class="badge badge-g">OK</span></td></tr>
+        <tr><td>Teikit</td><td>Singapur/Ninja/Roca Maki (11 DK)</td><td>L/M/J/S</td><td>2x1</td><td>2x1</td><td><span class="badge badge-g">OK</span></td></tr>
+        <tr><td>Teikit</td><td>$40 desc / mov $379 (11 DK)</td><td>L-V</td><td>10.55%</td><td>—</td><td><span class="badge badge-g">OK</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="promo-card">
+    <div class="promo-card-title">🎁 Promos Activas — Itzu &amp; El Huequito (Mayo 2026)</div>
+    <table class="promo-table">
+      <thead><tr><th>Marca</th><th>Producto</th><th>Días</th><th>No PRO</th><th>PRO</th><th>Desc/MOV</th></tr></thead>
+      <tbody>
+        <tr><td>Itzu</td><td>Spicy Tuna Roll</td><td>Todos</td><td>2x1</td><td>2x1</td><td>—</td></tr>
+        <tr><td>Itzu</td><td>Tiger Roll</td><td>Todos</td><td>2x1</td><td>2x1</td><td>—</td></tr>
+        <tr><td>Itzu</td><td>Trad. Salmón Avocado</td><td>Todos</td><td>2x1</td><td>2x1</td><td>—</td></tr>
+        <tr><td>Itzu</td><td>$40 desc / mov $399</td><td>S/D</td><td>10.03%</td><td>—</td><td>Co-inv</td></tr>
+        <tr><td>El Huequito</td><td>Taco al Pastor</td><td>V/S/D</td><td>25%</td><td>30%</td><td>—</td></tr>
+        <tr><td>El Huequito</td><td>Combo Huequito</td><td>L/Mi/V/S</td><td>20%</td><td>25%</td><td>—</td></tr>
+        <tr><td>El Huequito</td><td>$40 desc / mov $549</td><td>L-V</td><td>7.29%</td><td>—</td><td>Co-inv</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ======== GROUP SUMMARY ======== -->
+<div class="group-summary">
+  <div class="group-summary-header">
+    <span>📊 Resumen Consolidado Grupo — Mayo 2026</span>
+    <span style="font-size:11px;opacity:0.8;">*LY = Mayo 2025 (fuente ScoreCard histórico)</span>
+  </div>
+  <div style="padding:12px;overflow-x:auto;">
+    <table class="summary-table">
+      <thead><tr>
+        <th>Marca</th>
+        <th>Ventas May'26</th><th>MoM</th>
+        <th>Órdenes</th><th>MoM Ord</th>
+        <th>AOV</th>
+        <th>%MD</th>
+        <th>ADS Burn</th>
+        <th>ROAS</th>
+        <th>YTD Ventas</th>
+        <th>Status</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>🍱 Lucky Sushi</td>
+          <td>$3,011K</td><td class="down">-3.8%</td>
+          <td>12,286</td><td class="down">-11.6%</td>
+          <td>$245</td>
+          <td class="down">27.7%</td>
+          <td>$271K</td>
+          <td>3.6x</td>
+          <td>$13,848K</td>
+          <td><span class="badge badge-y">⚠️ Quema MD</span></td>
+        </tr>
+        <tr>
+          <td>🍣 Teikit</td>
+          <td>$1,080K</td><td class="up">+3.3%</td>
+          <td>3,121</td><td class="up">+23.6%</td>
+          <td>$346</td>
+          <td class="down">29.8%</td>
+          <td>$111K</td>
+          <td>3.4x</td>
+          <td>$5,030K</td>
+          <td><span class="badge badge-b">Rebote</span></td>
+        </tr>
+        <tr>
+          <td>🥩 El Huequito</td>
+          <td>$494K</td><td class="down">-6.1%</td>
+          <td>1,114</td><td class="down">-7.6%</td>
+          <td>$443</td>
+          <td class="up">2.1%</td>
+          <td>$835</td>
+          <td>~47x</td>
+          <td>$2,635K</td>
+          <td><span class="badge badge-g">✅ Sano</span></td>
+        </tr>
+        <tr>
+          <td>🔮 Itzu Sushi</td>
+          <td>$4.99K</td><td class="down">-22.9%</td>
+          <td>6</td><td class="down">-25.0%</td>
+          <td>$832</td>
+          <td class="up">0%</td>
+          <td>$0</td>
+          <td>—</td>
+          <td>$23.1K</td>
+          <td><span class="badge badge-r">🚨 Crítico</span></td>
+        </tr>
+        <tr style="background:#f5f5f5;font-weight:800;">
+          <td>🏁 GRUPO TOTAL</td>
+          <td>$4,590K</td><td class="down">-3.2%</td>
+          <td>16,527</td><td class="down">-8.1%</td>
+          <td>$278</td>
+          <td>21.7%</td>
+          <td>$383K</td>
+          <td>—</td>
+          <td>$21,536K</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background:#171321;color:#b8bbc8;padding:14px 24px;font-size:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:0 16px;border-radius:18px;">
+  <div>🏍️ Rappi MX — ScoreCard Mayo 2026 · Uso Interno</div>
+  <div>Fuentes: Data_Export XLSX (1-7) · ScoreCard 2.0 Google Sheets · XRays Dashboard MX</div>
+  <div>Generado: Junio 2026</div>
+</div>
+
+</body>
+</html>
